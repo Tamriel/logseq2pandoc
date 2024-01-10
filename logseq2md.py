@@ -109,7 +109,7 @@ def remove_logseq_attrs(elem, doc):
         if len(section) == 0:
             return False
         first_text = getattr(section[0], 'text', '')
-        return first_text.endswith("::") or first_text.startswith('%')
+        return first_text.endswith("::") and first_text != ":::" or first_text.startswith('%')
         
 
     new_sections = []
